@@ -38,3 +38,9 @@ class SignupSerializer(serializers.ModelSerializer):
         return user
     
 
+class CurrentUserPostsSerializer(serializers.ModelSerializer):
+    posts = serializers.StringRelatedField(many=True)
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email']
